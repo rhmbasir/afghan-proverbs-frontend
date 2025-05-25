@@ -1,0 +1,12 @@
+<div *ngIf="isLoading">Loading...</div>
+<div *ngIf="error" class="error">{{ error }}</div>
+
+<div *ngIf="!isLoading && proverb">
+  <h2>Proverb Details</h2>
+  <p><strong>No:</strong> {{ proverb.id }}</p>
+  <p><strong>Dari:</strong> {{ proverb.textDari }}</p>
+  <p><strong>Pashtu:</strong> {{ proverb.textPashto }}</p>
+  <p><strong>English:</strong> {{ proverb.translationEn }}</p>
+  <p><strong>Meaning:</strong> {{ proverb.meaning }}</p>
+  <p><strong>category:</strong> {{ proverb.category }}</p>
+</div>

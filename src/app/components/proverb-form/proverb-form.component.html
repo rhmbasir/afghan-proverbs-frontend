@@ -1,0 +1,32 @@
+<h2>{{ isEditMode ? 'Edit' : 'Add' }} Proverb</h2>
+
+<form [formGroup]="proverbForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="textDari">Text (Dari):</label>
+    <input id="textDari" formControlName="textDari" />
+  </div>
+
+  <div>
+    <label for="textPashto">Text (Pashto):</label>
+    <input id="textPashto" formControlName="textPashto" />
+  </div>
+
+  <div>
+    <label for="translationEn">Translation (English):</label>
+    <input id="translationEn" formControlName="translationEn" />
+  </div>
+
+  <div>
+    <label for="meaning">Meaning:</label>
+    <textarea id="meaning" formControlName="meaning"></textarea>
+  </div>
+
+  <div>
+    <label for="category">Category:</label>
+    <input id="category" formControlName="category" />
+  </div>
+
+  <button type="submit" [disabled]="proverbForm.invalid">
+    {{ isEditMode ? 'Update' : 'Add' }}
+  </button>
+</form>

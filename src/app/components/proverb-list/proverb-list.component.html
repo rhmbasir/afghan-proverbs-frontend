@@ -1,0 +1,30 @@
+<div class="container mt-4">
+  <h2 class="mb-3">Afghan Proverbs & Sayings</h2>
+  <div *ngIf="filteredProverbs.length === 0" class="text-muted mt-3">
+    No proverbs found.
+  </div>
+
+  <div class="mb-3 row">
+    <div class="col-md-5">
+      <input type="text" class="form-control" placeholder="Search proverb..."
+             [(ngModel)]="searchTerm" (input)="search()">
+    </div>
+    <div class="col-md-3">
+      <select [(ngModel)]="category" (change)="search()">
+        <option value="">All Categories</option>
+        <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <button class="btn btn-primary w-100" (click)="goToAdd()">Add New</button>
+    </div>
+  </div>
+
+  <ul class="list-group">
+    <li *ngFor="let proverb of filteredProverbs" class="list-group-item d-flex justify-content-between align-items-center">
+      <span>{{ proverb.text }}</span>
+      <!-- <button class="btn btn-outline-info btn-sm" (click)="goToDetail(proverb.id)">View</button> -->
+      <a [routerLink]="['/proverb', proverb.id]">View</a>
+    </li>
+  </ul>
+</div>
