@@ -3,12 +3,14 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProverbService } from '../../services/proverb.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-proverb-form',
   templateUrl: './proverb-form.component.html',
+  styleUrls:['./proverb-form.component.css'],
   standalone: true,
-  imports: [ReactiveFormsModule]
+  imports: [ReactiveFormsModule, FormsModule]
 })
 export class ProverbFormComponent implements OnInit {
   proverbForm!: FormGroup;
